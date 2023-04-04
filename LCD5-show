@@ -12,10 +12,8 @@ sudo mkdir -p /usr/share/X11/xorg.conf.d
 
 sudo cp -rf ./etc/rc.local /etc/rc.local
 
-sudo cp -rf ./etc/X11/xorg.conf.d/99-calibration.conf  /usr/share/X11/xorg.conf.d/99-calibration.conf
+sudo cp -rf ./etc/X11/xorg.conf.d/99-calibration.conf /usr/share/X11/xorg.conf.d/99-calibration.conf
 sudo cp ./boot/config.txt /boot/config.txt
-
-sudo cp -rf ./usr/share/X11/xorg.conf.d/99-fbturbo.conf /usr/share/X11/xorg.conf.d/99-fbturbo.conf 
 
 sudo cp ./boot/cmdline.txt /boot/cmdline.txt
 
