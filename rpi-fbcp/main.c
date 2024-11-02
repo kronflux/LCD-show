@@ -1,7 +1,8 @@
 
 #include <stdio.h>
 #include <syslog.h>
-#include <fcntl.h>
+#include <sys/fcntl.h>
+#include <sys/ioctl.h>
 #include <linux/fb.h>
 #include <sys/mman.h>
 
@@ -63,7 +64,7 @@ int process() {
 
     fbp = (char*) mmap(0, finfo.smem_len, PROT_READ | PROT_WRITE, MAP_SHARED, fbfd, 0);
     if (fbp <= 0) {
-        syslog(LOG_ERR, "Unable to create mamory mapping");
+        syslog(LOG_ERR, "Unable to create memory mapping");
         close(fbfd);
         ret = vc_dispmanx_resource_delete(screen_resource);
         vc_dispmanx_display_close(display);
@@ -90,6 +91,3 @@ int main(int argc, char **argv) {
 
     return process();
 }
-
-
-
